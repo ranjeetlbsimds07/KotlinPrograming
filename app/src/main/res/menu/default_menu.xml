@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/startService"
+        android:title="Start Service"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/stopService"
+        android:title="Stop Service"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/boundService"
+        android:title="Bound Service"
+        app:showAsAction="never"
+        android:icon="@drawable/add_btn"
+        />
+    <item
+        android:id="@+id/stopBoundService"
+        android:title="Stop Bound Service"
+        app:showAsAction="never"
+        />
+</menu>
