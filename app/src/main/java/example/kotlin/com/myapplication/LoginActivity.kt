@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -26,6 +27,10 @@ import java.io.InputStreamReader
 import java.io.Serializable
 import java.net.HttpURLConnection
 import java.net.URL
+import android.support.design.widget.Snackbar
+import android.support.v4.widget.DrawerLayout
+import android.view.MenuItem
+
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -43,11 +48,51 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         var et_password = findViewById<EditText>(R.id.et_password) as EditText
         var btn_reset = findViewById<Button>(R.id.btn_reset) as Button
         var btn_submit = findViewById<Button>(R.id.btn_submit) as Button
+        //var nav_view = findViewById<NavigationView>(R.id.nav_view) as NavigationView
 
         btn_submit.setOnClickListener(this);
         btn_reset.setOnClickListener(this);
         DisplayProgressDialog()
         fethdetails()
+
+
+        var drawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+
+        val view = findViewById<NavigationView>(R.id.nav_view) as NavigationView
+        view.setNavigationItemSelectedListener(object : NavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+                //Snackbar.make(content, menuItem.getTitle() + " pressed", Snackbar.LENGTH_LONG).show()
+                //menuItem.setChecked(true)
+                when (menuItem.itemId) {
+                    R.id.pickImg -> {
+                        // Handle the camera action
+                        //Toast.makeText(this@LoginActivity, "Handle the camera action", Toast.LENGTH_SHORT).show()
+                        val intent: Intent = Intent(this@LoginActivity, TakePictureActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.circularProgress -> {
+                        val intent: Intent = Intent(this@LoginActivity, ProgrssBarActivity::class.java)
+                        startActivity(intent)
+                    }
+                    /*
+                    R.id.nav_slideshow -> {
+
+                    }
+                    R.id.nav_manage -> {
+
+                    }
+                    R.id.nav_share -> {
+
+                    }
+                    R.id.nav_send -> {
+
+                    }*/
+                }
+
+                drawerLayout.closeDrawers()
+                return true
+            }
+        })
 
 
     }

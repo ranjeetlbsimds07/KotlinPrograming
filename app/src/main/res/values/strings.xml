@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="hello_word_text">Hello Word Text</string>
+    <string name="title_activity_progrss_bar">ProgrssBarActivity</string>
 </resources>

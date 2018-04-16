@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <group>
+    <item
+        android:id="@+id/pickImg"
+        android:title="Pick Image From Gallery"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/circularProgress"
+        android:title="circular progress bar"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/boundService"
+        android:title="DashBoard"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/stopBoundService"
+        android:title="Registration"
+        app:showAsAction="never"
+        />
+    </group>
+</menu>
